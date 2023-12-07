@@ -5,15 +5,16 @@ def prioritize(c):
 with open('input.txt', 'r') as input:
     common = []
     lines = input.read().splitlines()
-    # print(lines)
-    for line in lines:
+    # print(len(lines))
+    for i in range(0, len(lines), 3):
         # print(line)
-        mid = int(len(line) / 2)
-        r1 = line[:mid]
-        r2 = line[mid:]
+        mid = int(len(lines[i]) / 2)
+        r1 = lines[i]
+        r2 = lines[i+1]
+        r3 = lines[i+2]
         for c in r1: 
-            if c in r2:
-                # print(f'{"".join(sorted(r1))} -> {c}: {prioritize(c)}\n{"".join(sorted(r2))}\n ' + '^'.rjust("".join(sorted(r2)).find(c)))
+            if c in r2 and c in r3:
+                # print(f'{r1}\n{r2} -> {c}: {prioritize(c)}\n{r3}\n\n')
                 common.append(prioritize(c))
                 break
     # print(common)
