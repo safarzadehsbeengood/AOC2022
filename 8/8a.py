@@ -4,7 +4,7 @@ with open('input.txt', 'r') as input:
     lines = input.read().splitlines()
     grid = [list(map(int, line)) for line in lines]
     rows, columns = len(grid), len(grid[0])
-    # print(f'{rows} x {columns}')
+    print(f'{rows} x {columns}')
     
     for i in tqdm(range(rows)):
         for j in range(columns):
